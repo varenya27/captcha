@@ -1,6 +1,7 @@
 import imutils
 import cv2
 
+#not my code pls dont sue
 
 def resize_to_fit(image, width, height):
     """
