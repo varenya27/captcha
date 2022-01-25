@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import re
 import urllib
-from solve import solve
+from solve import solvecaptcha
 def isolateCaptcha(url):
     src=url[::-1]
     src=src[0:5]
@@ -53,7 +53,7 @@ image=r'D:\coding\python\captcha\testcases\plswork\cap.png'
 time.sleep(2)
 while(1):
     driver.save_screenshot(image)
-    text=solve(image)
+    text=solvecaptcha(image)
     if text!=0:
         break
     driver.refresh()

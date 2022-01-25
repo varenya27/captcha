@@ -27,8 +27,7 @@ captcha_image_files = list(paths.list_images(CAPTCHA_IMAGE_FOLDER))
 captcha_image_files = np.random.choice(captcha_image_files, size=(10,), replace=False)
 
 
-image_file=r'D:\coding\python\captcha\testcases\plswork\cap.png'
-def solve(image_file):
+def solvecaptcha(image_file):
 
     image = cv2.imread(image_file)
 
@@ -72,3 +71,7 @@ def solve(image_file):
     captcha_text = "".join(predictions)
     print("CAPTCHA text is: {}".format(captcha_text))
     return captcha_text
+image_file=r'D:\coding\python\captcha\testcases\plswork\cap.png'
+
+if __name__=='__main__':
+    solvecaptcha()
