@@ -1,10 +1,8 @@
 import os
-import selenium
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-import re
-import urllib
+import urllib.request
 from solve import solvecaptcha
 def isolateCaptcha(url):
     src=url[::-1]
@@ -47,13 +45,17 @@ btn = driver.find_element_by_id('login')
 btn.click()
 
 #secondpage
-captcha1 = driver.find_element_by_id('appCaptchaLoginImg')
-src1 = isolateCaptcha(captcha1.get_attribute('src'))
-image=r'D:\coding\python\captcha\testcases\plswork\cap.png'
-time.sleep(2)
+# captcha1 = driver.find_element_by_id('appCaptchaLoginImg')
+# src1 = isolateCaptcha(captcha1.get_attribute('src'))
+# image=r'D:\coding\python\captcha\testcases\plswork\cap.png'
+time.sleep(5)
 while(1):
-    driver.save_screenshot(image)
-    text=solvecaptcha(image)
+    img = driver.find_element_by_xpath('//*[@id="appCaptchaLoginImg"]')
+    src = img.get_attribute('src')
+    urllib.request.urlretrieve(src, "captcha.png")
+
+    # driver.save_screenshot(image)
+    text=solvecaptcha('captcha.png')
     if text!=0:
         break
     driver.refresh()
@@ -64,3 +66,6 @@ enterCaptcha.send_keys(text)
 
 btn = driver.find_element_by_id('submit')
 btn.click()
+
+# driver.find_element_by_xpath('//*[@id="red"]/li/ul/li[5]/div').click()
+# driver.find_element_by_xpath('//*[@id="red"]/li/ul/li[5]/ul/li[4]/span').click()

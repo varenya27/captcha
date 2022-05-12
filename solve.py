@@ -5,7 +5,7 @@ from imutils import paths
 import numpy as np
 import cv2
 import pickle
-from crop import crop 
+# from crop import crop 
 from threshold import threshold
 from contour import isolate
 
@@ -31,8 +31,8 @@ def solvecaptcha(image_file):
 
     image = cv2.imread(image_file)
 
-    cropim= crop(image)
-    threshim= threshold(cropim)
+    # cropim= crop(image)
+    threshim= threshold(image)
     letter_image_regions= isolate(threshim)
     if isinstance(letter_image_regions, int):
         print('Bad Captcha')
@@ -41,7 +41,7 @@ def solvecaptcha(image_file):
     # output = cv2.merge([image] * 3)
     predictions = []
 
-    # loop over the lektters
+    # loop over the letters
     for letter_bounding_box in letter_image_regions:
 
 

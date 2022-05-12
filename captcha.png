@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<input type="hidden" value="sessionexpired" />
+	<div class="formHrd">
+		<span>Your session has expired or accessing URL without login or invalid URL.</span>
+	</div>
+	<div class="formHrd">
+		<span>Please login and try again.</span>
+	</div>
+	
+</html>
