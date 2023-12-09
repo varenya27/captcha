@@ -10,5 +10,5 @@
 - ``threshold.py`` [applies a threshold to the colors and converts the image to bw]
 - ``contour.py`` [detects the letters and makes the contours around them]
 ## To train the model and put it in action, run the following files:
--``solve.py`` [trains the network]
--``aims.py`` [uses selenium to open the browser and automatically log in to the portal]
+- ``solve.py`` [trains the network]
+- ``aims.py`` [uses selenium to open the browser and automatically log in to the portal]
